@@ -25,8 +25,7 @@ describe("Rover class", function() {
     let message = new Message(name, commands);
     let rover = new Rover(98382);    // Passes 98382 as the rover's position
     let response = rover.receiveMessage(message);
-    // console.log(response.message.name);
-    expect(response.message).toEqual(name);
+    expect(response.message).toEqual(message.name);
   });
 
   //test 9:
