@@ -46,6 +46,9 @@ class Rover {
         //If Power is LOW, DO NOT MOVE
         if (this.mode === 'LOW_POWER') {
           this.position = this.position;
+          result = {
+            completed: false
+          }
         }
         else {
           this.position = message.commands[i].value;
@@ -60,7 +63,7 @@ class Rover {
         if (message.commands[i].value === 'LOW_POWER') {
           this.mode = 'LOW_POWER';
           result = {
-            completed: false
+            completed: true
           }
         } else {
           this.mode = 'NORMAL';
